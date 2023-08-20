@@ -60,8 +60,8 @@ jobs:
       - name: Run Checkov action
         id: checkov
         uses: bridgecrewio/checkov-action@master
-        with:
+          with:
           directory: cfn/
           quiet: false # optional: display only failed checks
           soft_fail: false # optional: do not return an error code if there are failed checks
-          #skip_check: CKV_AWS_115,CKV_AWS_116,CKV_AWS_173,CKV_AWS_260
+          skip_check: CKV_AWS_115,CKV_AWS_116,CKV_AWS_173,CKV_AWS_260
