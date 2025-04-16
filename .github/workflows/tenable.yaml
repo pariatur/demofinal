@@ -1,3 +1,10 @@
+name: Tenable WAS Scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   tenable-scan:
     runs-on: ubuntu-latest
