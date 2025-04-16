@@ -1,0 +1,16 @@
+jobs:
+  tenable-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Tenable Web App Scan
+        run: |
+          docker pull tenable/was-scanner:latest
+          docker run \
+            -e WAS_MODE=ci \
+            -e ACCESS_KEY=${{ secrets.TENABLE_IO_ACCESS_KEY }} \
+            -e SECRET_KEY=${{ secrets.TENABLE_IO_SECRET_KEY }} \
+            -v ${{ github.workspace }}:/scanner \
+            tenable/was-scanner:latest
