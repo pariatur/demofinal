@@ -28,5 +28,5 @@ s3transfer==0.5.2
 six==1.16.0
 toml==0.10.2
 urllib3==1.26.8
-virtualenv==20.13.2
+virtualenv==20.26.6
 wrapt==1.12.1
